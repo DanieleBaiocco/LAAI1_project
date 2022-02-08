@@ -1,0 +1,4 @@
+PowerRange = 2..11;
+n_digits = 2;
+num_to_check = 9;
+max_digits_generated = 4;
