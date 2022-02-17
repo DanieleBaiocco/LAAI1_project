@@ -1,4 +1,4 @@
 n_cards = 52;
 n_red = 26;
 left_split = 25;
-n_black_right_split = 14;
+n_red_left_split = 12;

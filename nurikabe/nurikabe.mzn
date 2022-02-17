@@ -35,7 +35,7 @@ constraint forall(i in range_one_r, j in 1..N, k in 1..N where output_grid[j,k] 
                   
 % to ensure that cells of each island and of the sea form a continuous shape
 constraint forall(i in range_zero_r_wo_one, j in 1..N, k in 1..N where output_grid[j,k] == i)(
-                    output_grid[j-1,k] == i \/ output_grid[j+1,k] == i \/ output_grid[j,k-1] == i \/ output_grid[j,k+1] == i
+                    (output_grid[j-1,k] == i \/ output_grid[j+1,k] == i \/ output_grid[j,k-1] == i \/ output_grid[j,k+1] == i)
                     /\
                     if (output_grid[j-1,k] == i /\ output_grid[j+1,k] != i /\ output_grid[j,k-1] != i /\ output_grid[j,k+1] != i)
                     then (output_grid[j-2,k] == i \/ output_grid[j-1,k-1] == i \/ output_grid[j-1,k+1] == i) else true endif
@@ -49,6 +49,7 @@ constraint forall(i in range_zero_r_wo_one, j in 1..N, k in 1..N where output_gr
                     if (output_grid[j,k+1] == i /\ output_grid[j,k-1] != i /\ output_grid[j+1,k] != i /\ output_grid[j-1,k] != i) 
                     then (output_grid[j,k+2] == i \/ output_grid[j-1,k+1] == i \/ output_grid[j+1,k+1] == i) else true endif
            );
+
 
 % to ensure that there are no water areas of 2x2 or larger
 constraint forall(j in 1..N-1, k in 1..N-1)(

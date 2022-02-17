@@ -1,4 +1,5 @@
 n_digits = 2;
-max_digits_generated = 4;
-MultiplicatorRange = 2..11;
+max_digits_after_mult = 4;
+multiplicator_range = 2..11;
 num_to_check = 9;
+
